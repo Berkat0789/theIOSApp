@@ -43,6 +43,8 @@ extension homeVC: UITableViewDelegate, UITableViewDataSource {
         switch app.name {
         case K.AppNames.weatherApp:
             performSegue(withIdentifier: K.segues.appsToWeather, sender: self)
+        case K.AppNames.chatApp:
+            performSegue(withIdentifier: K.segues.appsToChat, sender: self)
         default:
             return
         }
