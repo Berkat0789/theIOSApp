@@ -18,6 +18,11 @@
 		B45F72CB25D1F48900EE3932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45F72C925D1F48900EE3932 /* LaunchScreen.storyboard */; };
 		B45F72D625D1F48900EE3932 /* theappsappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45F72D525D1F48900EE3932 /* theappsappTests.swift */; };
 		B45F72E125D1F48900EE3932 /* theappsappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45F72E025D1F48900EE3932 /* theappsappUITests.swift */; };
+		B4ABE21C25D333C7001A7FE8 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE21B25D333C7001A7FE8 /* Inceptionv3.mlmodel */; };
+		B4ABE22125D3342E001A7FE8 /* inceptionImageRecognizerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE22025D3342E001A7FE8 /* inceptionImageRecognizerVC.swift */; };
+		B4ABE22925D44AFF001A7FE8 /* animalClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE22825D44AFF001A7FE8 /* animalClassifier.mlmodel */; };
+		B4ABE22E25D44C20001A7FE8 /* animalClassifierVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE22D25D44C20001A7FE8 /* animalClassifierVC.swift */; };
+		B4ABE23325D46971001A7FE8 /* twitterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE23225D46971001A7FE8 /* twitterVC.swift */; };
 		B4CDDBCF25D220630091C171 /* weatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDDBCD25D220630091C171 /* weatherCell.swift */; };
 		B4CDDBD025D220630091C171 /* weatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4CDDBCE25D220630091C171 /* weatherCell.xib */; };
 		B4D4EB1525D2BE2600A37B80 /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4EB1425D2BE2600A37B80 /* loginVC.swift */; };
@@ -83,6 +88,11 @@
 		B45F72DC25D1F48900EE3932 /* theappsappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = theappsappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45F72E025D1F48900EE3932 /* theappsappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theappsappUITests.swift; sourceTree = "<group>"; };
 		B45F72E225D1F48900EE3932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4ABE21B25D333C7001A7FE8 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		B4ABE22025D3342E001A7FE8 /* inceptionImageRecognizerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inceptionImageRecognizerVC.swift; sourceTree = "<group>"; };
+		B4ABE22825D44AFF001A7FE8 /* animalClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = animalClassifier.mlmodel; sourceTree = "<group>"; };
+		B4ABE22D25D44C20001A7FE8 /* animalClassifierVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalClassifierVC.swift; sourceTree = "<group>"; };
+		B4ABE23225D46971001A7FE8 /* twitterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twitterVC.swift; sourceTree = "<group>"; };
 		B4CDDBCD25D220630091C171 /* weatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherCell.swift; sourceTree = "<group>"; };
 		B4CDDBCE25D220630091C171 /* weatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = weatherCell.xib; sourceTree = "<group>"; };
 		B4D4EB1425D2BE2600A37B80 /* loginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
@@ -190,6 +200,8 @@
 				B45F72C725D1F48900EE3932 /* Assets.xcassets */,
 				B45F72C925D1F48900EE3932 /* LaunchScreen.storyboard */,
 				B45F72CC25D1F48900EE3932 /* Info.plist */,
+				B4ABE22825D44AFF001A7FE8 /* animalClassifier.mlmodel */,
+				B4ABE21B25D333C7001A7FE8 /* Inceptionv3.mlmodel */,
 				B439567B25D2BA1600AD38A6 /* GoogleService-Info.plist */,
 				B4E5A7F425D1F7AB0080251F /* Constants.swift */,
 			);
@@ -223,6 +235,9 @@
 				B4D4EB1925D2BE3500A37B80 /* registerVC.swift */,
 				B4D4EB1E25D2C65700A37B80 /* chatVC.swift */,
 				B44698A425D31DE500CEEC8E /* AuthVC.swift */,
+				B4ABE22025D3342E001A7FE8 /* inceptionImageRecognizerVC.swift */,
+				B4ABE22D25D44C20001A7FE8 /* animalClassifierVC.swift */,
+				B4ABE23225D46971001A7FE8 /* twitterVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -542,13 +557,18 @@
 				B4E5A82525D216630080251F /* ForecastService.swift in Sources */,
 				B4D4EB2B25D2D11B00A37B80 /* Message.swift in Sources */,
 				B4E5A81925D1FF370080251F /* Weather.swift in Sources */,
+				B4ABE23325D46971001A7FE8 /* twitterVC.swift in Sources */,
 				B4E5A82025D212C50080251F /* ForecastData.swift in Sources */,
+				B4ABE21C25D333C7001A7FE8 /* Inceptionv3.mlmodel in Sources */,
 				B4E5A82A25D216940080251F /* Forecast.swift in Sources */,
 				B4D4EB1A25D2BE3500A37B80 /* registerVC.swift in Sources */,
 				B4CDDBCF25D220630091C171 /* weatherCell.swift in Sources */,
+				B4ABE22925D44AFF001A7FE8 /* animalClassifier.mlmodel in Sources */,
 				B4E5A7F025D1F6E90080251F /* Apps.swift in Sources */,
 				B4E5A7EB25D1F6A10080251F /* homeVC.swift in Sources */,
 				B45F72C125D1F48600EE3932 /* SceneDelegate.swift in Sources */,
+				B4ABE22125D3342E001A7FE8 /* inceptionImageRecognizerVC.swift in Sources */,
+				B4ABE22E25D44C20001A7FE8 /* animalClassifierVC.swift in Sources */,
 				B4D4EB2525D2CE7800A37B80 /* messageCell.swift in Sources */,
 				B44698A525D31DE500CEEC8E /* AuthVC.swift in Sources */,
 				B4E5A80F25D1FF230080251F /* WeatherData.swift in Sources */,
@@ -658,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -713,7 +733,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

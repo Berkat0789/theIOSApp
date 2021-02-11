@@ -14,6 +14,12 @@ class homeVC: UIViewController {
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationItem.hidesBackButton = true
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,6 +51,13 @@ extension homeVC: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: K.segues.appsToWeather, sender: self)
         case K.AppNames.chatApp:
             performSegue(withIdentifier: K.segues.appsToChat, sender: self)
+        case K.AppNames.mlApp:
+            performSegue(withIdentifier: K.segues.appsToImgRecon, sender: self)
+        case K.AppNames.createML:
+            performSegue(withIdentifier: K.segues.appsToAnimalClassifier, sender: self)
+        case K.AppNames.twitterSentimant:
+            performSegue(withIdentifier: K.segues.appsToTwitter, sender: self)
+            
         default:
             return
         }
