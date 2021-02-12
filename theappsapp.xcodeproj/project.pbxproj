@@ -18,6 +18,7 @@
 		B45F72CB25D1F48900EE3932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45F72C925D1F48900EE3932 /* LaunchScreen.storyboard */; };
 		B45F72D625D1F48900EE3932 /* theappsappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45F72D525D1F48900EE3932 /* theappsappTests.swift */; };
 		B45F72E125D1F48900EE3932 /* theappsappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45F72E025D1F48900EE3932 /* theappsappUITests.swift */; };
+		B475B6D025D6202500243A5C /* twitter_test_1_2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B475B6CF25D6202500243A5C /* twitter_test_1_2.mlmodel */; };
 		B4ABE21C25D333C7001A7FE8 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE21B25D333C7001A7FE8 /* Inceptionv3.mlmodel */; };
 		B4ABE22125D3342E001A7FE8 /* inceptionImageRecognizerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE22025D3342E001A7FE8 /* inceptionImageRecognizerVC.swift */; };
 		B4ABE22925D44AFF001A7FE8 /* animalClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE22825D44AFF001A7FE8 /* animalClassifier.mlmodel */; };
@@ -88,6 +89,7 @@
 		B45F72DC25D1F48900EE3932 /* theappsappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = theappsappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45F72E025D1F48900EE3932 /* theappsappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theappsappUITests.swift; sourceTree = "<group>"; };
 		B45F72E225D1F48900EE3932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B475B6CF25D6202500243A5C /* twitter_test_1_2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = twitter_test_1_2.mlmodel; sourceTree = "<group>"; };
 		B4ABE21B25D333C7001A7FE8 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		B4ABE22025D3342E001A7FE8 /* inceptionImageRecognizerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inceptionImageRecognizerVC.swift; sourceTree = "<group>"; };
 		B4ABE22825D44AFF001A7FE8 /* animalClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = animalClassifier.mlmodel; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				B45F72CC25D1F48900EE3932 /* Info.plist */,
 				B4ABE22825D44AFF001A7FE8 /* animalClassifier.mlmodel */,
 				B4ABE21B25D333C7001A7FE8 /* Inceptionv3.mlmodel */,
+				B475B6CF25D6202500243A5C /* twitter_test_1_2.mlmodel */,
 				B439567B25D2BA1600AD38A6 /* GoogleService-Info.plist */,
 				B4E5A7F425D1F7AB0080251F /* Constants.swift */,
 			);
@@ -573,6 +576,7 @@
 				B44698A525D31DE500CEEC8E /* AuthVC.swift in Sources */,
 				B4E5A80F25D1FF230080251F /* WeatherData.swift in Sources */,
 				B4E5A7FC25D1F8580080251F /* appCell.swift in Sources */,
+				B475B6D025D6202500243A5C /* twitter_test_1_2.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
