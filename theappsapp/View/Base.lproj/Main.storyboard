@@ -206,14 +206,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7js-N0-VBD">
-                                <rect key="frame" x="107" y="304" width="200" height="200"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Mln-uL-C0D"/>
-                                    <constraint firstAttribute="height" constant="200" id="Xwo-GG-n0P"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Co5-mK-7Yj">
                                 <rect key="frame" x="0.0" y="644" width="414" height="130"/>
                                 <subviews>
@@ -224,6 +216,9 @@
                                         <state key="normal" title="PREDICT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="predictPressed:" destination="LDk-nh-l9i" eventType="touchUpInside" id="u3a-8X-XlD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -244,6 +239,9 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="LDk-nh-l9i" id="8bv-ix-rmW"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -255,14 +253,20 @@
                                     <constraint firstItem="ZIk-yv-8GD" firstAttribute="leading" secondItem="cBR-DL-Lzk" secondAttribute="leading" constant="5" id="i6h-68-uSM"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuL-9O-JDh">
+                                <rect key="frame" x="137.5" y="368" width="139.5" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t1L-Cl-FV1"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7js-N0-VBD" firstAttribute="centerX" secondItem="exG-Xa-oc0" secondAttribute="centerX" id="0Hb-Pa-v10"/>
                             <constraint firstItem="Co5-mK-7Yj" firstAttribute="leading" secondItem="t1L-Cl-FV1" secondAttribute="leading" id="7Vx-m3-rG3"/>
+                            <constraint firstItem="GuL-9O-JDh" firstAttribute="centerY" secondItem="exG-Xa-oc0" secondAttribute="centerY" id="EnF-hh-Gxf"/>
                             <constraint firstItem="t1L-Cl-FV1" firstAttribute="trailing" secondItem="cBR-DL-Lzk" secondAttribute="trailing" id="TDe-Xc-FFS"/>
-                            <constraint firstItem="7js-N0-VBD" firstAttribute="centerY" secondItem="exG-Xa-oc0" secondAttribute="centerY" id="TR0-iv-hY0"/>
+                            <constraint firstItem="GuL-9O-JDh" firstAttribute="centerX" secondItem="exG-Xa-oc0" secondAttribute="centerX" id="Xuc-38-yix"/>
                             <constraint firstItem="Co5-mK-7Yj" firstAttribute="top" secondItem="cBR-DL-Lzk" secondAttribute="bottom" id="aE6-Wu-wu9"/>
                             <constraint firstItem="cBR-DL-Lzk" firstAttribute="leading" secondItem="t1L-Cl-FV1" secondAttribute="leading" id="jIq-C7-qbT"/>
                             <constraint firstItem="t1L-Cl-FV1" firstAttribute="trailing" secondItem="Co5-mK-7Yj" secondAttribute="trailing" id="p6B-1b-7sE"/>
@@ -270,6 +274,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F6o-F6-iXL"/>
+                    <connections>
+                        <outlet property="emojiLabel" destination="GuL-9O-JDh" id="89n-vF-e0x"/>
+                        <outlet property="searchField" destination="ZIk-yv-8GD" id="eDd-fU-8ch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYu-IC-oHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -648,7 +656,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

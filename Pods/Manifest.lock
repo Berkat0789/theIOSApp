@@ -302,11 +302,13 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - IQKeyboardManagerSwift (= 6.5.0)
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -326,6 +328,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -344,7 +347,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: d999b4d36a2c79d21358ae84a175db7ecebcf111
+PODFILE CHECKSUM: accddccb6cd20c3d52550a7922ff3d7da3348d90
 
 COCOAPODS: 1.10.0
