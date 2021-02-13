@@ -7,6 +7,8 @@
 
 import Foundation
 import SwifteriOS
+import CoreML
+import  SwiftyJSON
 
 
 
@@ -26,20 +28,70 @@ struct Keys: Codable {
 
 struct SwifterService {
     
+    private let twitterSentament = twitter_test_1_2()
+    private let swifter = Swifter(consumerKey: customerKey, consumerSecret: secretKey)
+    private var sentimantScore = 0
+
       
 
 
     
-    func searchFor(tweet: String) {
+    func searchFor(tweet: String, completed: @escaping (_ tweets: [String], _ score: Int) -> ()) {
+        var tweetArray = [twitter_test_1_2Input]()
         // We are createing a new instance of swifter
-        let swifter = Swifter(consumerKey: customerKey, consumerSecret: secretKey)
-        swifter.searchTweet(using: tweet) { (results, metaData) in
-            print(results)
+        swifter.searchTweet(using: tweet, lang: "en",count: 100, tweetMode: TweetMode.extended) { (results, metaData) in
+            //print(results)
+            // We will need to parse the json for the results
+            //Lets get all the tweets into an array
+            guard let resultsArray = results.array else{fatalError("No data returned")}
+            for i in 0..<resultsArray.count {
+                if let tweet = results[i]["full_text"].string {
+                    let tweetClassinput = twitter_test_1_2Input(text: tweet)
+                    tweetArray.append(tweetClassinput)
+                }
+            }
+            guard let tweetPredictionBatch = self.makePredicitonFOr(tweets: tweetArray).0 else {return}
+            guard let score = self.makePredicitonFOr(tweets: tweetArray).1 else{return}
+            completed(tweetPredictionBatch, score)
         } failure: { (error) in
             print("There was an error gfetching tweets \(error)")
+            completed([], 0)
         }
-
     }
+    
+     private func makePredicitonFOr(tweets: [twitter_test_1_2Input]) -> ([String]?, Int?) {
+        var labels = [String]()
+        do {
+            let prediction = try twitterSentament.predictions(inputs: tweets)
+            // We need to convert the tweet string array to  model input
+            var score = 0
+            prediction.forEach { (pre) in
+                labels.append(pre.label)
+                let label = pre.label
+                if label == "Pos"{
+                    score += 1
+                } else if label == "Neg" {
+                    score -= 1
+                }
+            }
+//            print("sentiment analysis score is \(score)")
+            return (labels, score)
+        } catch {
+            print("Thre was an error prediction tweet \(error.localizedDescription)")
+            return (nil, nil)
+        }
+    }
+    
+//    private func checkSentiment(label: String) -> Int {
+//        if label == "Pos" {
+//            sentimantScore += 1
+//        } else if label == "Neg" {
+//            sentimantScore -= 1
+//        }
+//        return sentimantScore
+//    }
+    
+    
     
 //    func getPlist(withName name: String, completed: @escaping (_ key: String, _ secret: String, _ access: String, _ accSec: String) ->())  {
 //        let keys = ["k": String]

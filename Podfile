@@ -5,6 +5,7 @@ target 'theappsapp' do
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'IQKeyboardManagerSwift', '6.5.0'
+pod 'SwiftyJSON'
 
   use_frameworks!
 
