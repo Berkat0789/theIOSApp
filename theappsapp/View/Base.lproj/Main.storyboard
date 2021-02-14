@@ -44,6 +44,7 @@
                         <segue destination="bT7-FP-7YD" kind="show" identifier="appsToImgRecon" id="e3v-KQ-inK"/>
                         <segue destination="vzH-tS-H0X" kind="show" identifier="appsToAnimalClassifier" id="gp7-er-AWZ"/>
                         <segue destination="LDk-nh-l9i" kind="show" identifier="appsToTwitter" id="Cd3-iG-P3R"/>
+                        <segue destination="9iy-VD-MB3" kind="show" identifier="appsToSentimentDisplay" id="DJJ-NR-22k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -282,6 +283,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYu-IC-oHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="167" y="3358"/>
+        </scene>
+        <!--Tweet Sentiment2VC-->
+        <scene sceneID="zIG-0F-FfV">
+            <objects>
+                <viewController id="9iy-VD-MB3" customClass="tweetSentiment2VC" customModule="theappsapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oPs-av-uHE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ld-vb-san">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MJm-9A-oai">
+                                        <rect key="frame" x="18" y="4" width="389" height="52"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search @ or #" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-YG-Isf">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="52"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="318" id="906-nS-2M5"/>
+                                                    <constraint firstAttribute="height" constant="52" id="zKl-Vh-iGy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="9iy-VD-MB3" id="8d7-ww-0jf"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4m-I3-xTQ">
+                                                <rect key="frame" x="338" y="0.0" width="51" height="52"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="51" id="a1l-ie-Pei"/>
+                                                    <constraint firstAttribute="height" constant="52" id="qhZ-fl-b3y"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="paperplane.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="9iy-VD-MB3" eventType="touchUpInside" id="WfU-Ud-skm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6JS-RT-H4R"/>
+                                    <constraint firstItem="MJm-9A-oai" firstAttribute="top" secondItem="8ld-vb-san" secondAttribute="top" constant="4" id="BO9-87-eBe"/>
+                                    <constraint firstAttribute="bottom" secondItem="MJm-9A-oai" secondAttribute="bottom" constant="4" id="Gfq-cc-GMD"/>
+                                    <constraint firstAttribute="trailing" secondItem="MJm-9A-oai" secondAttribute="trailing" constant="7" id="K1o-1t-GHK"/>
+                                    <constraint firstItem="MJm-9A-oai" firstAttribute="leading" secondItem="8ld-vb-san" secondAttribute="leading" constant="18" id="hva-Qg-8QF"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yzT-Jv-yNq">
+                                <rect key="frame" x="0.0" y="60" width="414" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9iy-VD-MB3" id="2Ww-iA-c58"/>
+                                    <outlet property="delegate" destination="9iy-VD-MB3" id="sfb-d1-Ktu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yi4-MJ-lpw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yi4-MJ-lpw" firstAttribute="bottom" secondItem="yzT-Jv-yNq" secondAttribute="bottom" id="Dpr-oU-PZs"/>
+                            <constraint firstItem="yzT-Jv-yNq" firstAttribute="leading" secondItem="yi4-MJ-lpw" secondAttribute="leading" id="Tm3-wR-cmJ"/>
+                            <constraint firstItem="yi4-MJ-lpw" firstAttribute="trailing" secondItem="yzT-Jv-yNq" secondAttribute="trailing" id="bu4-dF-fex"/>
+                            <constraint firstItem="8ld-vb-san" firstAttribute="leading" secondItem="yi4-MJ-lpw" secondAttribute="leading" id="cCK-zH-SR7"/>
+                            <constraint firstItem="8ld-vb-san" firstAttribute="trailing" secondItem="yi4-MJ-lpw" secondAttribute="trailing" id="epb-Hd-8dO"/>
+                            <constraint firstItem="8ld-vb-san" firstAttribute="top" secondItem="yi4-MJ-lpw" secondAttribute="top" id="g3M-4H-L8s"/>
+                            <constraint firstItem="yzT-Jv-yNq" firstAttribute="top" secondItem="8ld-vb-san" secondAttribute="bottom" id="vy2-dh-gpm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mhL-CA-zOU"/>
+                    <connections>
+                        <outlet property="searchField" destination="eQ9-YG-Isf" id="pye-Um-web"/>
+                        <outlet property="tweetTableView" destination="yzT-Jv-yNq" id="8pp-wU-rOy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="win-4R-GVX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966.66666666666674" y="3361.6071428571427"/>
         </scene>
         <!--WeatherVC-->
         <scene sceneID="c8N-VY-yQJ">

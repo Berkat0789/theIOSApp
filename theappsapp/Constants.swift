@@ -17,11 +17,13 @@ struct K {
         static let mlApp = "mlApp"
         static let createML = "createML"
         static let twitterSentimant = "twitterSent"
+        static let twitterSentiment2 = "twitterSentiment2"
     }
     struct cellIdentifiers {
         static let appCell = "appCell"
         static let weatherCell = "weatherCell"
         static let messageCell = "messageCell"
+        static let tweetCell = "tweetCell"
     }
     struct segues {
         static let appsToWeather = "appsToWeather"
@@ -31,6 +33,7 @@ struct K {
         static let appsToImgRecon = "appsToImgRecon"
         static let appsToAnimalClassifier = "appsToAnimalClassifier"
         static let appsToTwitter = "appsToTwitter"
+        static let appsToSentimentDisplay = "appsToSentimentDisplay"
     }
     struct DB {
         static let messageCollection = "message"
@@ -38,5 +41,9 @@ struct K {
         static let bodyNode = "body"
         static let stampNode = "timestamp"
     }
-    
+    struct SentimentLabels {
+        static let positive = "Pos"
+        static let negative = "Negative"
+        static let neutral = "Neutral"
+    }
 }

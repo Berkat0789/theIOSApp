@@ -57,6 +57,8 @@ extension homeVC: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: K.segues.appsToAnimalClassifier, sender: self)
         case K.AppNames.twitterSentimant:
             performSegue(withIdentifier: K.segues.appsToTwitter, sender: self)
+        case K.AppNames.twitterSentiment2:
+            performSegue(withIdentifier: K.segues.appsToSentimentDisplay, sender: self)
             
         default:
             return
